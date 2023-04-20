@@ -8,10 +8,20 @@ jobs:
     steps:
       - name: List Files
         run: |
+          echo "List files before checkout"
           echo "Run pwd"
           pwd
           echo "Run ls"
-          ls
+          ls -al
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: List Files after the checkout
+        run: |
+          echo "List files after checkout"
+          echo "Run pwd"
+          pwd
+          echo "Run ls"
+          ls -al
       - name: Simple JS Actions
         id: greet
         uses: actions/hello-world-javascript-action@v1   # Here you can type version - v1 (example.), whole branch or specific commit
