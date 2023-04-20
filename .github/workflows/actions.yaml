@@ -1,0 +1,16 @@
+name: Actions Workflow
+
+on: [push]
+
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simple JS Actions
+        id: greet
+        uses: actions/hello-world-javascript-action@v1   # Here you can type version - v1 (example.), whole branch or specific commit
+        with:
+          who-to-greet: Johnny Cash
+      - name: Log Greeting Time
+        run: echo $"{{ steps.greet.outputs.time }}"  # this is a code which takes the output time from the repo. It’s a steps. then the id variable in this case greet, then the output time. 
+                                                     # Outputs are different for every repo, they are usually specified in it's documentation.
