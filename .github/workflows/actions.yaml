@@ -12,5 +12,5 @@ jobs:
         with:
           who-to-greet: Johnny Cash
       - name: Log Greeting Time
-        run: echo $"{{ steps.greet.outputs.time }}"  # this is a code which takes the output time from the repo. It’s a steps. then the id variable in this case greet, then the output time. 
+        run: echo "${{ steps.greet.outputs.time }}" # this is a code which takes the output time from the repo. It’s a steps. then the id variable in this case greet, then the output time. 
                                                      # Outputs are different for every repo, they are usually specified in it's documentation.
