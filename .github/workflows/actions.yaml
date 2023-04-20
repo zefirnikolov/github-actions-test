@@ -8,7 +8,9 @@ jobs:
     steps:
       - name: List Files
         run: |
+          echo "Run pwd"
           pwd
+          echo "Run ls"
           ls
       - name: Simple JS Actions
         id: greet
