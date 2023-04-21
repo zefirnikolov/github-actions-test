@@ -1,8 +1,8 @@
 name: First Actions Workflow
 
 on:
-  schedule:
-    - cron: "* * * * *"
+  # schedule:
+  #   - cron: "* * * * *"
   push:
   # pull_request:
   #   types: [closed, assigned, opened, reopened]
