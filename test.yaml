@@ -1,1 +1,6 @@
 key: value
+key2:
+  key: value
+  array: 
+    - array-part: asd
+    - array-part: asd
