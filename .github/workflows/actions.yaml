@@ -3,7 +3,7 @@ name: First Actions Workflow
 on:
   schedule:
     - cron: "* * * * *"
-  # push:
+  push:
   # pull_request:
   #   types: [closed, assigned, opened, reopened]
     # types:
