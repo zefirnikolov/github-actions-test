@@ -1,16 +1,14 @@
 name: First Actions Workflow
 
 on:
-  schedule:
-    - cron: '*/5 * * * *'
-  # push:
+  # repository_dispatch:
+  #   types: [build]
+  # schedule:
+  #   - cron: '*/5 * * * *'
+  # # push:
   pull_request:
     types: [closed, assigned, opened, reopened]
-    # types:
-    #   - closed
-    #   - assigned
-    #   - opened
-    #   - reopened
+
 
 jobs:
   run-github-actions:
