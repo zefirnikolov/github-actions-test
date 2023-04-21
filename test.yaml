@@ -4,3 +4,5 @@ key2:
   array: 
     - array-part: asd
     - array-part: asd
+    - item1
+    - item2
