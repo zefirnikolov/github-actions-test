@@ -1,13 +1,38 @@
 name: First Actions Workflow
 
 on:
+  push:
+    branches:
+      - master
+      - 'feature/*'
+      # - '!feature/featC'  # This will run on those branches, but if it reach on feature/featC - it will ignore it
+    # branches-ignore:    -> we can't have branches and branches ignore at the same time
+    #   - master
+    tags:
+      - v1.*
+    # tags-ignore:
+    #   - ""
+    paths:
+      - '**.js'  # This pattern will match any .js file in our repo
+      # - '!filename.js'
+    # paths-ignore:
+    #   - 'docs/**'
+
+
+  # the pull request workflow will only run if the pull request is requesting to merge with master:
+  # pull_request:
+  #   branches:
+  #     - master
+
   # repository_dispatch:
   #   types: [build]
   # schedule:
   #   - cron: '*/5 * * * *'
-  # # push:
-  pull_request:
-    types: [closed, assigned, opened, reopened]
+
+  # push:
+
+  # pull_request:
+  #   types: [closed, assigned, opened, reopened]
 
 
 jobs:
