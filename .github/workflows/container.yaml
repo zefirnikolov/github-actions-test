@@ -11,4 +11,4 @@ jobs:
       - name: Log node.js version
         run: |
           node -v
-          cat /etc/os-release/
+          cat /etc/os-release
