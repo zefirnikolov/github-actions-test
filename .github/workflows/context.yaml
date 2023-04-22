@@ -2,6 +2,19 @@ name: Context testing
 on: push
 
 jobs:
+  functions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: dump
+        # contains - check if the string of the 1st argument is contained in the second argument - and returns a boollean
+        # startsWith - check if the string starts with another string - boolean
+        # endsWith - if with ends with the same string
+        # format - it will be replaced with an argument - {0} will be replaces with World, {1} with - "!", and {2} with - "!"
+        run: |
+          echo ${{ contains( 'hello', '11' ) }}
+          echo ${{ startsWith( 'hello', 'he' ) }}
+          echo ${{ endsWith( 'hello', '1o' ) }}
+          echo ${{ format( 'Hello {0} {1} {2}', 'World', '!', '!' ) }}
   dump_contexts_to_log:
     runs-on: ubuntu-latest
     steps:
