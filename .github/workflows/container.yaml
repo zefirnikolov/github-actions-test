@@ -2,6 +2,29 @@ name: Container
 on: push
 
 jobs:
+  docker-steps:
+    runs-on: ubuntu-latest
+    container:
+      image: node:10.18.0-jessie
+    # if we write any steps here - they will run inside of this container
+    steps:
+      - name: log node.js version
+        run: |
+          cat /etc/os-release
+          node -v
+      # BUT we can write a step that uses it's own container
+      - name: Step with docker
+        uses: docker://node:12.14.1-alpine3.10
+        # we can also overwrite the ENTRYPOINT of this docker container with use the with key
+        with:
+          entrypoint: '/bin/echo'
+          args: "Hello World"
+      - name: Log node.js version
+        uses: docker://node:12.14.1-alpine3.10
+        # we can also overwrite the ENTRYPOINT of this docker container with use the with key
+        with:
+          entrypoint: /usr/local/bin/node
+          args: -v
   node-docker:
     runs-on: ubuntu-latest
     services:
