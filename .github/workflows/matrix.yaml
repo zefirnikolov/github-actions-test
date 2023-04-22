@@ -6,9 +6,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Log node version
+        # Log the Node.js version installed on the virtual machine
         run: node -v
       - uses: actions/setup-node@v1
+        # Change the Node.js version to 6
         with:
           node-version: 6
       - name: Log node version
+        # Log the Node.js version
         run: node -v
