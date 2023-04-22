@@ -28,10 +28,9 @@ jobs:
       - uses: actions/checkout@v1
       - name: Run a script
         uses: docker://node:12.14.1-alpine3.10
-        # we can also overwrite the ENTRYPOINT of this docker container with use the with key
         with:
-          entrypoint: ./script/sh
-          args: "Some String"
+          entrypoint: ./script.sh
+          args: "Some string"
   node-docker:
     runs-on: ubuntu-latest
     services:
