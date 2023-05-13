@@ -1,0 +1,13 @@
+name: Echo Run Number
+
+on: 
+  push:
+    branches:
+      - master
+
+jobs:
+  echo-run-number:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo the Run Number
+        run: echo "This is run number ${{ github.run_number }}"
