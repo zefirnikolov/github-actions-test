@@ -11,3 +11,13 @@ jobs:
     steps:
       - name: Echo the Run Number
         run: echo "This is run number ${{ github.run_number }}"
+  pull-docker-image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pull docker image
+        run: |
+          docker pull nginx
+      - name: Always pull the other image
+        if: always()
+        run: |
+          docker pull alpine
