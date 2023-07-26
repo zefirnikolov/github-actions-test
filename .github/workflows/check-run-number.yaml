@@ -18,6 +18,8 @@ jobs:
         run: |
           docker pull nginx:555534235fg
       - name: Always pull the other image
+        # This will always pull image, even on failure. However the exit code of the failure + failed repo will show too!
+        # USE THIS TO CLEAN UP AFTER JOBS!
         if: always()
         run: |
           docker pull alpine
