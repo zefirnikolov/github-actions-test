@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Pull docker image
         run: |
-          docker pull nginx
+          docker pull nginx:555534235fg
       - name: Always pull the other image
         if: always()
         run: |
